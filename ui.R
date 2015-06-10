@@ -1,9 +1,17 @@
-shinyUI(pageWithSidebar(
-  headerPanel("Example plot"),
-  sidebarPanel(
-    sliderInput('mu', 'Guess at the mu',value = 70, min = 60, max = 80, step = 0.05,)
-  ),
-  mainPanel(
-    plotOutput('myHist')
+library(shiny)
+shinyUI(
+  pageWithSidebar(
+    # Application title
+    headerPanel("Calculate BMI"),
+    
+    sidebarPanel(
+      numericInput(inputId="length", label = "Input length in cm", 175),
+      numericInput(inputId="weight", label = "Input weight in kg", 70)
+    ),
+    mainPanel(
+      h3('Your BMI'),
+      textOutput("bmi"),
+      textOutput("bmiLevel")
+    )
   )
-))
+)
