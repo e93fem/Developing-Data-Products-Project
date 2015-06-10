@@ -11,7 +11,9 @@ shinyUI(
     mainPanel(
       h3('Your BMI'),
       textOutput("bmi"),
-      textOutput("bmiLevel")
+      textOutput("bmiLevel"),
+      
+      plotOutput('newHist')
     )
   )
 )
