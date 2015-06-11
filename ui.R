@@ -9,10 +9,10 @@ shinyUI(
       numericInput(inputId="weight", label = "Input weight in kg", 70)
     ),
     mainPanel(
-      h3('Your BMI'),
-      textOutput("bmi"),
-      textOutput("bmiLevel"),
-      
+      h3('Your BMI', align = "center"),
+#      textOutput("bmi"),
+      h4(textOutput("bmiLevel"), align = "center"),
+
       plotOutput('newHist')
     )
   )
